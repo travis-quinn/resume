@@ -1,0 +1,23 @@
+---
+format: html
+---
+
+# Header
+
+My name is {{< var contact.name >}}. {{< var contact.email >}}
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column width="30%"}
+Hi this be a sidebar
+:::
+
+::: {.column width="70%"}
+# Work
+
+Title: {{< var work.work1.title >}}
+
+-   {{< var work.work1.bullet1 >}}
+:::
+:::
