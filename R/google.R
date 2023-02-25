@@ -9,14 +9,23 @@ auth_google_sheets <- function() {
 
 }
 
-get_sheet <- function(sheet_name) {
+
+
+get_sheet <- function(wb_id, sheet_name) {
 
   auth_google_sheets()
-
-  wb_id <- "1DrQduf2C0muSsZFNJI5y9Ljtr3qKYNacC9YRkI8NiQs"
 
   googlesheets4::read_sheet(wb_id, sheet = sheet_name)
 
 }
 
-get_sheet("skills")
+
+
+get_data <- function(wb_id) {
+
+  sheets <- googlesheets4::sheet_names(wb_id)
+
+  rlang::set_names(sheets) %>%
+    purrr::map(~ get_sheet(wb_id, .x))
+
+}
