@@ -2,9 +2,26 @@
 format: html
 ---
 
-# Header
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(magrittr)
+functions_to_source <- list.files("R", full.names = TRUE)
+for (f in functions_to_source) source(f)
 
-My name is {{< var contact.name >}}. {{< var contact.email >}}
+# save data as variables in yaml file
+wb_id <- "1DrQduf2C0muSsZFNJI5y9Ljtr3qKYNacC9YRkI8NiQs"
+DATA <- get_data(wb_id)
+write_to_vars(DATA)
+
+# save heatmap as png
+heatmap_data <- clean_skills(DATA$skills)
+heatmap <- create_skills_heatmap(heatmap_data)
+save_skills_heatmap(heatmap, "images/heatmap.png")
+```
+
+
+# {{< var contact.name >}}
+
+Mysss name is {{< var contact.name >}}. {{< var contact.email >}}
 
 ------------------------------------------------------------------------
 
