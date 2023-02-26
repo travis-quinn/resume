@@ -35,8 +35,7 @@ clean_contact <- function(df) {
 
   rlang::set_names(df$text,
                    nm = df$id) %>%
-    as.list() %>%
-    list(contact = .)
+    as.list()
 
 }
 
@@ -76,7 +75,9 @@ clean_work_other <- function(df) {
 
 clean_education <- function(df) {
 
-
+  rlang::set_names(df$text,
+                   nm = df$id) %>%
+    as.list()
 
 }
 
