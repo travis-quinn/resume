@@ -22,7 +22,7 @@ write_to_vars <- function(DATA) {
     work = clean_work(DATA$work),
     work_other = clean_work_other(DATA$work_other),
     education = clean_education(DATA$education),
-    avocations = clean_avocations(DATA$avocations)
+    interests = clean_interests(DATA$interests)
   )
 
   yaml::write_yaml(nested_list, "_variables.yml")
@@ -91,9 +91,11 @@ clean_skills <- function(df) {
 
 
 
-clean_avocations <- function(df) {
+clean_interests <- function(df) {
 
-
+  rlang::set_names(df$text,
+                   nm = df$id) %>%
+    as.list()
 
 }
 

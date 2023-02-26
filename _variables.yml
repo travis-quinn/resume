@@ -1,7 +1,74 @@
 contact:
-  name: Chuck
+  name: Chuck Horgan
   email: chorgan182@gmail.com
+  phone: (724) 987-3190
+  linkedin: https://www.linkedin.com/in/charles-t-horgan-iv/
+  github: https://github.com/chorgan182
+  website: https://www.chuckhorgan.com/
 work:
   work1:
+    company: Technomics, Inc.
     title: Lead Analyst
-    bullet1: Led ppl, did R.
+    start: '2019-08-12'
+    end: Present
+    bullet1: main bullet text
+    b1sub1: sub bullet text
+    b1sub2: sub bullet text
+    b1sub3: sub bullet text
+    bullet2: main bullet text
+    b2sub1: sub bullet text
+    b2sub2: sub bullet text
+    b2sub3: sub bullet text
+    bullet3: main bullet text
+    b3sub1: sub bullet text
+    b3sub2: sub bullet text
+    b3sub3: sub bullet text
+  work2:
+    company: Federal Reserve Board
+    title: Research Assistant
+    start: '2018-06-01'
+    end: '2019-07-31'
+    bullet1: Contributed to research and policy initiatives in the Financial Stability
+      Assessment section of the Division of Financial Stability.
+    bullet2: Routinely used statistical programming software to process, clean, visualize,
+      and analyze large datasets.
+    bullet3: Developed and taught a training on text-scraping HTML code with Python.
+  work3:
+    company: Penn State Economics Department
+    title: Research Assistant
+    start: '2017-05-01'
+    end: '2018-05-31'
+    bullet1: Communicated with state agencies to collect data pivotal to studies in
+      collusion by specific entities.
+    bullet2: Obtained all location information and developed an R script to geocode
+      and calculate driving distances utilizing Google API.
+    bullet3: Held primary responsibility for all informational aspects of the keynote
+      address delivered at the 2017 Antitrust Enforcement Symposium.
+work_other:
+  title1: Desk Staff/Open Climb Instructor
+  title2: Crew Leader
+  title3: Delivery Driver
+  title4: Peer Tutor
+  title5: Server Assistant
+  title6: Package Handler
+  company1: Earth Treks Climbing and Fitness
+  company2: Meehan Lawn Care
+  company3: Wings Over State College
+  company4: Penn State Beaver
+  company5: Texas Road House
+  company6: FedEx Ground
+education:
+  institution: The Pennsylvania State University
+  degree: B.S.
+  major: Economics
+  minor: Labor and Employment Relations
+  gpa: '3.69'
+  gpa_major: '3.93'
+  start: '2013-08-15'
+  end: '2018-05-07'
+interests:
+  int1: Riding my KTM Superduke
+  int2: PC building/tuning/gaming
+  int3: Rock climbing
+  int4: Backpacking
+  int5: Single-speed bicycles
