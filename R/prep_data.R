@@ -83,6 +83,7 @@ clean_education <- function(df) {
 
 
 
+# to be passed on to heatmap function
 clean_skills <- function(df) {
 
 
