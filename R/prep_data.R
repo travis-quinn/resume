@@ -1,20 +1,4 @@
 
-# include/exclude field
-
-# funcs for cleaning each section
-### enumerate each subsequent id? for wide-formatted data?
-
-# func for writing to yaml _variables
-
-# func for heatmap
-
-### TEMP
-DATA <- get_data("1DrQduf2C0muSsZFNJI5y9Ljtr3qKYNacC9YRkI8NiQs")
-
-
-
-
-
 write_to_vars <- function(DATA) {
 
   nested_list <- list(
