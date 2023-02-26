@@ -44,6 +44,8 @@ create_skills_heatmap <- function(skills_data) {
 
 save_skills_heatmap <- function(p, path) {
 
-
+  ggplot2::ggsave(plot = p, filename = path,
+                  bg = "white",
+                  dpi = 1000)
 
 }
