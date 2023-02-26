@@ -63,7 +63,12 @@ clean_work <- function(df) {
 
 clean_work_other <- function(df) {
 
+  ids <- c(paste0("title", seq.int(nrow(df))),
+           paste0("company", seq.int(nrow(df))))
 
+  rlang::set_names(c(df$title, df$company),
+                   nm = ids) %>%
+    as.list()
 
 }
 
