@@ -86,7 +86,36 @@ clean_education <- function(df) {
 # to be passed on to heatmap function
 clean_skills <- function(df) {
 
+  # skip first row
+  reshaped <- df[-1, ] %>%
+    # convert to integer class
+    dplyr::mutate(dplyr::across(-skill,
+                                ~ as.character(.x) %>%
+                                  dplyr::na_if("NA") %>%
+                                  as.integer())) %>%
+    dplyr::rename(Software = skill) %>%
+    # reshape
+    tidyr::pivot_longer(cols = -Software,
+                        names_to = "Skill",
+                        values_to = "Level",
+                        values_transform = list(Level = as.integer))
 
+  # create ordering for heatmap
+  software_levels <- df[-1, ]$skill
+  skill_levels <- names(df)[-1]
+  exp_level_levels <- c(5, 4, 3, 2, 1, 0, NA)
+
+  # coerce all to factors
+  reshaped %>%
+    dplyr::mutate(Software = factor(Software,
+                                    levels = rev(software_levels),
+                                    ordered = TRUE),
+                  Skill = factor(Skill,
+                                 levels = skill_levels,
+                                 ordered = TRUE),
+                  Level = factor(Level,
+                                 levels = exp_level_levels,
+                                 ordered = TRUE))
 
 }
 
