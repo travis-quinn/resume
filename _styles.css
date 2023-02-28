@@ -1,0 +1,30 @@
+
+:root {
+  font-family: arial;
+  max-width: 8.5in;
+  font-size: 10pt;
+}
+
+
+#name {
+  font-size: 2.5rem;
+  vertical-align: middle;
+}
+
+#contact {
+  font-size: 0.8rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+#contact p {
+  margin-block-start: 0.6em;
+  margin-block-end: 0.6em;
+}
+
+#fig-heatmap figure {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
