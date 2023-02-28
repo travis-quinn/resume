@@ -6,6 +6,6 @@
 .secrets
 *.html
 *.pdf
-images/heatmap.png
+images/heatmap.svg
 _variables.yml
 cached_data.qs
