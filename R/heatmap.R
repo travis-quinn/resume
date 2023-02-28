@@ -16,7 +16,7 @@ create_skills_heatmap <- function(skills_data) {
     ggplot2::geom_tile(color = "white",
                        lwd = 1,
                        linetype = 1) +
-    ggplot2::geom_text(ggplot2::aes(label = Level), size = 3.5, na.rm = TRUE) +
+    ggplot2::geom_text(ggplot2::aes(label = Level), size = 3, na.rm = TRUE) +
     #ggplot2::coord_fixed() +
     ggplot2::theme_minimal() +
     ggplot2::scale_fill_brewer(type = "seq",
@@ -35,7 +35,22 @@ create_skills_heatmap <- function(skills_data) {
     ggplot2::theme(legend.position = "bottom",
                    axis.ticks.length = ggplot2::unit(0, "cm"),
                    panel.grid = ggplot2::element_blank(),
-                   panel.border = ggplot2::element_blank()) +
+                   panel.border = ggplot2::element_blank(),
+                   text = ggplot2::element_text(size = 9),
+                   # axis.title.y = ggplot2::element_text(
+                   #   size = 10,
+                   #   face = "bold",
+                   #   margin = ggplot2::margin(l = 0, r = -30,
+                   #                            t = -70, b = 0),
+                   #   hjust = 1,
+                   #   angle = 0
+                   # )),
+                   axis.title.y = ggplot2::element_blank(),
+                   # axis.title.x = ggplot2::element_text(
+                   #   size = 10,
+                   #   face = "bold"
+                   # )
+                   axis.title.x = ggplot2::element_blank()) +
     ggplot2::guides(fill = ggplot2::guide_legend(direction = "vertical"))
 
 }
@@ -46,6 +61,9 @@ save_skills_heatmap <- function(p, path) {
 
   ggplot2::ggsave(plot = p, filename = path,
                   bg = "white",
-                  dpi = 1000)
+                  device = "svg",
+                  width = 0.9 * 0.4 * 8.5,
+                  height = 6.5,
+                  units = "in")
 
 }
