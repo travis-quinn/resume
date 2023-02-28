@@ -8,3 +8,4 @@
 *.pdf
 images/heatmap.png
 _variables.yml
+cached_data.qs

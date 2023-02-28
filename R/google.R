@@ -29,3 +29,19 @@ get_data <- function(wb_id) {
     purrr::map(~ get_sheet(wb_id, .x))
 
 }
+
+
+
+cache_data <- function(DATA) {
+
+  qs::qsave(DATA, "cached_data.qs")
+
+}
+
+
+
+load_cached_data <- function() {
+
+  qs::qread("cached_data.qs")
+
+}

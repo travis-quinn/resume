@@ -7,15 +7,29 @@ library(magrittr)
 functions_to_source <- list.files("R", full.names = TRUE)
 for (f in functions_to_source) source(f)
 
-# save data as variables in yaml file
-wb_id <- "1DrQduf2C0muSsZFNJI5y9Ljtr3qKYNacC9YRkI8NiQs"
-DATA <- get_data(wb_id)
-write_to_vars(DATA)
+# refresh data if desired, or files don't exist
+refresh <- FALSE
+cache_exists <- file.exists("cached_data.qs")
+vars_exists <- file.exists("_variables.yml")
+heatmap_exists <- file.exists("images/heatmap.png")
+necessary_files_exist <- all(cache_exists,
+                             vars_exists,
+                             heatmap_exists)
 
-# save heatmap as png
-heatmap_data <- clean_skills(DATA$skills)
-heatmap <- create_skills_heatmap(heatmap_data)
-save_skills_heatmap(heatmap, "images/heatmap.png")
+if (refresh | !necessary_files_exist) {
+  # get data from google workbook
+  wb_id <- "1DrQduf2C0muSsZFNJI5y9Ljtr3qKYNacC9YRkI8NiQs"
+  DATA <- get_data(wb_id)
+  cache_data(DATA)
+  
+  # save data as variables in yaml file
+  write_to_vars(DATA)
+  
+  # save heatmap as png
+  heatmap_data <- clean_skills(DATA$skills)
+  heatmap <- create_skills_heatmap(heatmap_data)
+  save_skills_heatmap(heatmap, "images/heatmap.png")
+}
 ```
 
 
