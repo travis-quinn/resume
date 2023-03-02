@@ -2,8 +2,12 @@
 format:
   html:
     theme: none
+    minimal: true
     css: "_styles.css"
     page-layout: article
+    link-external-icon: true
+    link-external-newwindow: true
+    from: markdown+emoji
 ---
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -15,7 +19,7 @@ for (f in functions_to_source) source(f)
 refresh <- FALSE
 cache_exists <- file.exists("cached_data.qs")
 vars_exists <- file.exists("_variables.yml")
-heatmap_exists <- file.exists("images/heatmap.png")
+heatmap_exists <- file.exists("images/heatmap.svg")
 necessary_files_exist <- all(cache_exists,
                              vars_exists,
                              heatmap_exists)
@@ -37,20 +41,34 @@ if (refresh | !necessary_files_exist) {
 ```
 
 ::: columns
-::: {#name .column width="75%"}
 
-{{< var contact.name >}}
+::: {#headshot .column width="15%"}
+
+```{=html}
+<div class="image-cropper">
+  <img
+   src="images/headshot.jpg"
+   alt="A photo of the author"
+   class="headshot-pic" />
+</div>
+```
+<!-- end pic column div -->
+:::
+
+::: {#name .column width="60%"}
+
+**{{< var contact.name >}}**
 
 <!-- end name column div -->
 :::
 
 ::: {#contact .column width="25%"}
 
-{{< fa envelope >}} [{{< var contact.email >}}](mailto: {{< var contact.email >}}){target=_blank"}
+{{< fa envelope >}} [{{< var contact.email >}}](mailto: {{< var contact.email >}})
 
 {{< fa phone >}} {{< var contact.phone >}}
 
-{{< fa brands linkedin >}} [linkedin.com/in/chuck-horgan]({{< var contact.linkedin >}}){target=_blank"}
+{{< fa brands linkedin >}} [linkedin.com/in/chuck-horgan]({{< var contact.linkedin >}})
 
 {{< fa brands github >}} [chorgan182]({{< var contact.github >}}){target=_blank"}
 
@@ -68,16 +86,39 @@ if (refresh | !necessary_files_exist) {
 ::: columns
 ::: {.column width="40%"}
 
-# Skills
+## Skills
 
-::: {#fig-heatmap}
-![](images/heatmap.svg){fig-align="left"}
-<!-- end figure div -->
+```{=html}
+<img
+ id="image-heatmap"
+ src="images/heatmap.svg"
+ alt="A heatmap with skills on the x-axis and software or tool on the y-axis"
+/>
+```
+
+::: {#education-block}
+
+## Education
+
+**{{< var education.institution >}}** ({{< var education.end >}})
+
+{{< var education.degree >}} | {{< var education.major >}}
+
+Minor | {{< var education.minor >}}
+
 :::
 
-# Education
+## Interests
 
-# Interests
+:motorcycle: {{< var interests.int1 >}}
+
+:desktop_computer: {{< var interests.int2 >}}
+
+:climbing_man: {{< var interests.int3 >}}
+
+:mountain_snow: {{< var interests.int4 >}}
+
+:bike: {{< var interests.int5 >}}
 
 <!-- end body left column div -->
 :::
@@ -86,9 +127,11 @@ if (refresh | !necessary_files_exist) {
 :::
 
 ::: {.column width="50%"}
-# Selected Experience
 
-{{< var work.work1.title >}}, {{< var work.work1.company >}}
+## Selected Experience
+
+**{{< var work.work1.title >}}**, {{< var work.work1.company >}}
+
 {{< var work.work1.start >}} — {{< var work.work1.end >}}
 
 - {{< var work.work1.bullet1 >}}
@@ -108,7 +151,7 @@ if (refresh | !necessary_files_exist) {
 
 ------------------------------------------------------------------------
 
-{{< var work.work2.title >}}, {{< var work.work2.company >}}
+**{{< var work.work2.title >}}**, {{< var work.work2.company >}}
 
 {{< var work.work2.start >}} — {{< var work.work2.end >}}
 
@@ -120,7 +163,7 @@ if (refresh | !necessary_files_exist) {
 
 ------------------------------------------------------------------------
 
-{{< var work.work3.title >}}, {{< var work.work3.company >}}
+**{{< var work.work3.title >}}**, {{< var work.work3.company >}}
 
 {{< var work.work3.start >}} — {{< var work.work3.end >}}
 
@@ -130,19 +173,19 @@ if (refresh | !necessary_files_exist) {
 
 - {{< var work.work3.bullet3 >}}
 
-# Additional Experience
+## Additional Experience
 
-- {{< var work_other.title1 >}}, {{< var work_other.company1 >}}
+- _{{< var work_other.title1 >}}_, {{< var work_other.company1 >}}
 
-- {{< var work_other.title2 >}}, {{< var work_other.company2 >}}
+- _{{< var work_other.title2 >}}_, {{< var work_other.company2 >}}
 
-- {{< var work_other.title3 >}}, {{< var work_other.company3 >}}
+- _{{< var work_other.title3 >}}_, {{< var work_other.company3 >}}
 
-- {{< var work_other.title4 >}}, {{< var work_other.company4 >}}
+- _{{< var work_other.title4 >}}_, {{< var work_other.company4 >}}
 
-- {{< var work_other.title5 >}}, {{< var work_other.company5 >}}
+- _{{< var work_other.title5 >}}_, {{< var work_other.company5 >}}
 
-- {{< var work_other.title6 >}}, {{< var work_other.company6 >}}
+- _{{< var work_other.title6 >}}_, {{< var work_other.company6 >}}
 :::
 :::
 
