@@ -20,10 +20,11 @@ create_skills_heatmap <- function(skills_data) {
 
   text_label_colors <- c(
     "5" = "#ffffff",
-    "4" = "#cccccc",
-    "3" = "#666666",
-    "2" = "#4c4c4c",
-    "1" = "#000000"
+    "4" = "#ffffff",
+    "3" = "#000000",
+    "2" = "#000000",
+    "1" = "#000000",
+    "0" = "#000000"
   )
 
   ggplot2::ggplot(skills_data, ggplot2::aes(x = Skill, y = Software, fill = Level)) +
@@ -62,7 +63,8 @@ create_skills_heatmap <- function(skills_data) {
       axis.ticks.length = ggplot2::unit(0, "cm"),
       panel.grid = ggplot2::element_blank(),
       panel.border = ggplot2::element_blank(),
-      text = ggplot2::element_text(size = 10),
+      text = ggplot2::element_text(size = 10,
+                                   family = "sans"),
       # axis.title.y = ggplot2::element_text(
       #   size = 10,
       #   face = "bold",
@@ -87,7 +89,8 @@ create_skills_heatmap <- function(skills_data) {
       panel.grid.minor = ggplot2::element_blank()
     ) +
     ggplot2::guides(fill = ggplot2::guide_legend(direction = "vertical",
-                                                 byrow = TRUE))
+                                                 byrow = TRUE),
+                    color = "none")
 
 }
 
