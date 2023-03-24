@@ -27,12 +27,14 @@ h2 {
 }
 
 #headshot {
-  vertical-align: middle;
+  height: 75px;
+  vertical-align: top;
 }
 
 .image-cropper {
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
+  margin-right: 8%;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
@@ -49,9 +51,14 @@ h2 {
   transform: scale(1.25);
 }
 
+#header {
+  vertical-align: middle;
+}
+
 #name {
   font-size: 3rem;
-  vertical-align: middle;
+  vertical-align: top;
+  color: #08519C;
 }
 
 #contact {
@@ -68,4 +75,12 @@ h2 {
   object-fit: contain;
   object-position: left top;
   margin-left: -8px;
+}
+
+#col-skills {
+  text-align: right;
+}
+
+#col-skills h2, p {
+  text-align: left;
 }

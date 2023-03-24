@@ -11,7 +11,27 @@ format:
     self-contained: true
 ---
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+
+# For Development
+library(magrittr)
+functions_to_source <- list.files("R", full.names = TRUE)
+for (f in functions_to_source) source(f)
+
+DATA <- qs::qread("cached_data.qs")
+skills_data <- clean_skills(DATA$skills)
+```
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
 library(magrittr)
 functions_to_source <- list.files("R", full.names = TRUE)
 for (f in functions_to_source) source(f)
@@ -45,6 +65,25 @@ if (refresh | !necessary_files_exist) {
 
 ::: columns
 
+::: {.column width="85%"}
+
+::: {#name}
+
+**{{< var contact.name >}}**
+
+<!-- end name div -->
+:::
+
+::: {#contact}
+
+{{< fa envelope >}} [{{< var contact.email >}}](mailto: {{< var contact.email >}}) &ensp;**|**&ensp; {{< fa brands linkedin >}} [linkedin.com/in/chuck-horgan]({{< var contact.linkedin >}}) &ensp;**|**&ensp; {{< fa brands github >}} [chorgan182]({{< var contact.github >}}){target=_blank"} &ensp;**|**&ensp; {{< fa globe >}} [chuckhorgan.com]({{< var contact.website >}}){target=_blank"} &ensp;**|**&ensp; {{< fa phone >}} {{< var contact.phone >}}
+
+<!-- end contact div -->
+:::
+
+<!-- end name/contact column div -->
+:::
+
 ::: {#headshot .column width="15%"}
 
 ```{=html}
@@ -58,76 +97,12 @@ if (refresh | !necessary_files_exist) {
 <!-- end pic column div -->
 :::
 
-::: {#name .column width="60%"}
-
-**{{< var contact.name >}}**
-
-<!-- end name column div -->
-:::
-
-::: {#contact .column width="25%"}
-
-{{< fa envelope >}} [{{< var contact.email >}}](mailto: {{< var contact.email >}})
-
-{{< fa phone >}} {{< var contact.phone >}}
-
-{{< fa brands linkedin >}} [linkedin.com/in/chuck-horgan]({{< var contact.linkedin >}})
-
-{{< fa brands github >}} [chorgan182]({{< var contact.github >}}){target=_blank"}
-
-{{< fa globe >}} [chuckhorgan.com]({{< var contact.website >}}){target=_blank"}
-
-<!-- end contact column div -->
-:::
-
-
 <!-- end header columns div -->
 :::
 
 ------------------------------------------------------------------------
 
 ::: columns
-::: {.column width="40%"}
-
-## Skills
-
-```{=html}
-<img
- id="image-heatmap"
- src="images/heatmap.svg"
- alt="A heatmap with skills on the x-axis and software or tool on the y-axis"
-/>
-```
-
-::: {#education-block}
-
-## Education
-
-**{{< var education.institution >}}** ({{< var education.end >}})
-
-{{< var education.degree >}} | {{< var education.major >}}
-
-Minor | {{< var education.minor >}}
-
-:::
-
-## Interests
-
-:motorcycle: {{< var interests.int1 >}}
-
-:desktop_computer: {{< var interests.int2 >}}
-
-:climbing_man: {{< var interests.int3 >}}
-
-:mountain_snow: {{< var interests.int4 >}}
-
-:bike: {{< var interests.int5 >}}
-
-<!-- end body left column div -->
-:::
-
-::: {.column width="10%"}
-:::
 
 ::: {.column width="50%"}
 
@@ -190,6 +165,50 @@ Minor | {{< var education.minor >}}
 
 - _{{< var work_other.title6 >}}_, {{< var work_other.company6 >}}
 :::
+
+::: {.column width="5%"}
+
+:::
+
+::: {#col-skills .column width="45%"}
+
+## Skills
+
+```{=html}
+<img
+ id="image-heatmap"
+ src="images/heatmap.svg"
+ alt="A heatmap with skills on the x-axis and software or tool on the y-axis"
+/>
+```
+
+::: {#education-block}
+
+## Education
+
+**{{< var education.institution >}}** ({{< var education.end >}})
+
+{{< var education.degree >}} | {{< var education.major >}}
+
+Minor | {{< var education.minor >}}
+
+:::
+
+## Interests
+
+:motorcycle: {{< var interests.int1 >}}
+
+:desktop_computer: {{< var interests.int2 >}}
+
+:climbing_man: {{< var interests.int3 >}}
+
+:mountain_snow: {{< var interests.int4 >}}
+
+:bike: {{< var interests.int5 >}}
+
+<!-- end body left column div -->
+:::
+
 :::
 
 {{< pagebreak >}}
