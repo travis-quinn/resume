@@ -12,14 +12,29 @@ create_skills_heatmap <- function(skills_data) {
     "NA - Software not applicable to skill"
   )
 
+  # 5 #08519C --- #ffffff
+  # 4 #3182BD --- #cccccc
+  # 3 #6BAED6 --- #666666
+  # 2 #9ECAE1 --- #4c4c4c
+  # 1 #C6DBEF --- #000000
+
+  text_label_colors <- c(
+    "5" = "#ffffff",
+    "4" = "#cccccc",
+    "3" = "#666666",
+    "2" = "#4c4c4c",
+    "1" = "#000000"
+  )
+
   ggplot2::ggplot(skills_data, ggplot2::aes(x = Skill, y = Software, fill = Level)) +
     ggplot2::geom_tile(color = "white",
                        lwd = 0.3,
                        linetype = 1) +
-    ggplot2::geom_text(ggplot2::aes(label = Level),
+    ggplot2::geom_text(ggplot2::aes(label = Level, color = Level),
                        size = 3,
                        fontface = "bold",
                        na.rm = TRUE) +
+    ggplot2::scale_color_manual(values = text_label_colors) +
     #ggplot2::coord_fixed() +
     ggplot2::theme_minimal() +
     ggplot2::scale_fill_brewer(type = "seq",
@@ -61,7 +76,7 @@ create_skills_heatmap <- function(skills_data) {
       #   size = 10,
       #   face = "bold"
       # )
-      axis.text.x.top = ggplot2::element_text(angle = 20, vjust = 0.6, hjust = 0.5),
+      axis.text.x.top = ggplot2::element_text(angle = 0, vjust = 0.5, hjust = 0.5),
       # it needed to be axis.text.x.TOP - we were missing the TOP part because
       #   vjust acts differently if the axis text is on top rather than the bottom
       ###^ :)

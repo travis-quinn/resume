@@ -8,6 +8,7 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     from: markdown+emoji
+    self-contained: true
 ---
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -36,6 +37,8 @@ if (refresh | !necessary_files_exist) {
   # save heatmap as png
   heatmap_data <- clean_skills(DATA$skills)
   heatmap <- create_skills_heatmap(heatmap_data)
+  # first layer is geom_tile for heatmap
+  plot_data <- ggplot2::ggplot_build(heatmap)$data[[1]]
   save_skills_heatmap(heatmap, "images/heatmap.svg")
 }
 ```

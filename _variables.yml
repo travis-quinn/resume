@@ -2,32 +2,33 @@ contact:
   name: Chuck Horgan
   email: chorgan182@gmail.com
   phone: (724) 987-3190
-  linkedin: https://www.linkedin.com/in/charles-t-horgan-iv/
+  linkedin: https://www.linkedin.com/in/chuck-horgan
   github: https://github.com/chorgan182
   website: https://www.chuckhorgan.com/
 work:
   work1:
     company: Technomics, Inc.
     title: Lead Analyst
-    start: '2019-08-12'
+    start: Aug 2019
     end: Present
-    bullet1: main bullet text
-    b1sub1: sub bullet text
-    b1sub2: sub bullet text
-    b1sub3: sub bullet text
-    bullet2: main bullet text
-    b2sub1: sub bullet text
-    b2sub2: sub bullet text
-    b2sub3: sub bullet text
-    bullet3: main bullet text
-    b3sub1: sub bullet text
-    b3sub2: sub bullet text
-    b3sub3: sub bullet text
+    bullet1: Relentless solution engineer
+    b1sub1: CFPB
+    b1sub2: USAsp
+    b1sub3: KDB overhaul
+    bullet2: Knowledge acquisition
+    b2sub1: server mgmt, automation
+    b2sub2: DBX, pkg dev
+    b2sub3: Do not believe in learning something to “work”; rather, learning something
+      to “teach” and add to toolbox
+    bullet3: Leadership
+    b3sub1: C2DB
+    b3sub2: CFPB
+    b3sub3: DATS Snippets, internal consultant
   work2:
     company: Federal Reserve Board
     title: Research Assistant
-    start: '2018-06-01'
-    end: '2019-07-31'
+    start: Jun 2018
+    end: Jul 2019
     bullet1: Contributed to research and policy initiatives in the Financial Stability
       Assessment section of the Division of Financial Stability.
     bullet2: Routinely used statistical programming software to process, clean, visualize,
@@ -36,8 +37,8 @@ work:
   work3:
     company: Penn State Economics Department
     title: Research Assistant
-    start: '2017-05-01'
-    end: '2018-05-31'
+    start: May 2017
+    end: May 2018
     bullet1: Communicated with state agencies to collect data pivotal to studies in
       collusion by specific entities.
     bullet2: Obtained all location information and developed an R script to geocode
@@ -65,7 +66,7 @@ education:
   gpa: '3.69'
   gpa_major: '3.93'
   start: '2013-08-15'
-  end: '2018-05-07'
+  end: '2018'
 interests:
   int1: Riding my KTM Superduke
   int2: PC building/tuning/gaming

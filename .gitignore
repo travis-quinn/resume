@@ -7,5 +7,5 @@
 *.html
 *.pdf
 images/heatmap.svg
-_variables.yml
 cached_data.qs
+_variables.yml
