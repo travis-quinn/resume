@@ -11,9 +11,14 @@ work:
     title: Lead Analyst
     start: Aug 2019
     end: Present
-    bullet1: Relentless solution engineer
-    b1sub1: CFPB
-    b1sub2: USAsp
+    bullet1: I am the most relentless solution engineer you have ever met. The following
+      are all implementations of self-taught knowledge to solve a problem in the most
+      sophisticated, yet reasonable method possible.
+    b1sub1: Transformed a broken collection of scripts into a scalable tool that parses
+      and analyzes 100s of GBs of fixed-width text data in minutes.
+    b1sub2: Operating within hardware and stakeholder skill limits, automated the
+      monthly refresh of the entire 2 TB USA Spending database.This PostgreSQL DB
+      has been used in production validation checks for 2+ years without error.
     b1sub3: KDB overhaul
     bullet2: Knowledge acquisition
     b2sub1: server mgmt, automation

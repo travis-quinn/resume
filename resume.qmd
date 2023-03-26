@@ -63,7 +63,7 @@ if (refresh | !necessary_files_exist) {
 }
 ```
 
-::: columns
+::: {#header .columns}
 
 ::: {.column width="85%"}
 
