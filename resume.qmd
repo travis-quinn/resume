@@ -37,7 +37,7 @@ functions_to_source <- list.files("R", full.names = TRUE)
 for (f in functions_to_source) source(f)
 
 # refresh data if desired, or files don't exist
-refresh <- FALSE
+refresh <- TRUE
 cache_exists <- file.exists("cached_data.qs")
 vars_exists <- file.exists("_variables.yml")
 heatmap_exists <- file.exists("images/heatmap.svg")
@@ -104,7 +104,7 @@ if (refresh | !necessary_files_exist) {
 
 ::: columns
 
-::: {.column width="50%"}
+::: {.column width="52%"}
 
 ## Selected Experience
 
@@ -133,11 +133,7 @@ if (refresh | !necessary_files_exist) {
 
 {{< var work.work2.start >}} — {{< var work.work2.end >}}
 
-- {{< var work.work2.bullet1 >}}
-
-- {{< var work.work2.bullet2 >}}
-
-- {{< var work.work2.bullet3 >}}
+{{< var work.work2.bullet1 >}}
 
 ------------------------------------------------------------------------
 
@@ -145,29 +141,13 @@ if (refresh | !necessary_files_exist) {
 
 {{< var work.work3.start >}} — {{< var work.work3.end >}}
 
-- {{< var work.work3.bullet1 >}}
+{{< var work.work3.bullet1 >}}
 
-- {{< var work.work3.bullet2 >}}
-
-- {{< var work.work3.bullet3 >}}
-
-## Additional Experience
-
-- _{{< var work_other.title1 >}}_, {{< var work_other.company1 >}}
-
-- _{{< var work_other.title2 >}}_, {{< var work_other.company2 >}}
-
-- _{{< var work_other.title3 >}}_, {{< var work_other.company3 >}}
-
-- _{{< var work_other.title4 >}}_, {{< var work_other.company4 >}}
-
-- _{{< var work_other.title5 >}}_, {{< var work_other.company5 >}}
-
-- _{{< var work_other.title6 >}}_, {{< var work_other.company6 >}}
+<!-- end body left column -->
 :::
 
-::: {.column width="5%"}
-
+::: {.column width="3%"}
+<!-- spacer column in middle of body -->
 :::
 
 ::: {#col-skills .column width="45%"}
@@ -182,17 +162,41 @@ if (refresh | !necessary_files_exist) {
 />
 ```
 
+## Additional Experience
+
+- _{{< var work_other.title1 >}}_, {{< var work_other.company1 >}}
+
+- _{{< var work_other.title2 >}}_, {{< var work_other.company2 >}}
+
+- _{{< var work_other.title3 >}}_, {{< var work_other.company3 >}}
+
+- _{{< var work_other.title4 >}}_, {{< var work_other.company4 >}}
+
+- _{{< var work_other.title5 >}}_, {{< var work_other.company5 >}}
+
+- _{{< var work_other.title6 >}}_, {{< var work_other.company6 >}}
+
+::: columns
+
+::: {.column width="40%"}
+
 ::: {#education-block}
 
 ## Education
 
-**{{< var education.institution >}}** ({{< var education.end >}})
+**{{< var education.institution >}}** 
 
 {{< var education.degree >}} | {{< var education.major >}}
 
-Minor | {{< var education.minor >}}
+({{< var education.end >}})
 
+<!-- end education block -->
 :::
+
+<!-- end education column -->
+:::
+
+::: {.column width="60%"}
 
 ## Interests
 
@@ -206,7 +210,13 @@ Minor | {{< var education.minor >}}
 
 :bike: {{< var interests.int5 >}}
 
-<!-- end body left column div -->
+<!-- end interests column -->
+:::
+
+<!-- end education/interests columns -->
+:::
+
+<!-- end body right column -->
 :::
 
 :::
