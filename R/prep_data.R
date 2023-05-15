@@ -3,6 +3,7 @@ write_to_vars <- function(DATA) {
 
   nested_list <- list(
     contact = clean_contact(DATA$contact),
+    summary = clean_summary(DATA$summary),
     work = clean_work(DATA$work),
     work_other = clean_work_other(DATA$work_other),
     education = clean_education(DATA$education),
@@ -10,6 +11,16 @@ write_to_vars <- function(DATA) {
   )
 
   yaml::write_yaml(nested_list, "_variables.yml")
+
+}
+
+
+
+clean_summary <- function(df) {
+
+  rlang::set_names(df$text,
+                   nm = df$id) %>%
+    as.list()
 
 }
 
@@ -30,7 +41,7 @@ clean_work <- function(df) {
   work_cols <- names(df) %>%
     purrr::keep(~ stringr::str_detect(.x, "^work"))
 
-  purrr::set_names(work_cols) %>%
+  temp <- purrr::set_names(work_cols) %>%
     purrr::map(~ {
       df_work <- df %>%
         dplyr::select(id, all_of(.x)) %>%

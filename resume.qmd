@@ -15,37 +15,15 @@ format:
 #| echo: false
 #| message: false
 #| warning: false
-#| eval: false
-
-# For Development
-library(magrittr)
-functions_to_source <- list.files("R", full.names = TRUE)
-for (f in functions_to_source) source(f)
-
-DATA <- qs::qread("cached_data.qs")
-skills_data <- clean_skills(DATA$skills)
-```
-
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
 
 library(magrittr)
 functions_to_source <- list.files("R", full.names = TRUE)
 for (f in functions_to_source) source(f)
 
-# refresh data if desired, or files don't exist
-refresh <- TRUE
-cache_exists <- file.exists("cached_data.qs")
-vars_exists <- file.exists("_variables.yml")
-heatmap_exists <- file.exists("images/heatmap.svg")
-necessary_files_exist <- all(cache_exists,
-                             vars_exists,
-                             heatmap_exists)
+# refresh data if desired
+refresh <- FALSE
 
-if (refresh | !necessary_files_exist) {
+if (refresh) {
   # get data from google workbook
   wb_id <- "1DrQduf2C0muSsZFNJI5y9Ljtr3qKYNacC9YRkI8NiQs"
   DATA <- get_data(wb_id)
@@ -102,6 +80,10 @@ if (refresh | !necessary_files_exist) {
 
 ------------------------------------------------------------------------
 
+<!-- Summary -->
+
+{{< var summary.summary >}}
+
 ::: columns
 
 ::: {.column width="52%"}
@@ -113,19 +95,14 @@ if (refresh | !necessary_files_exist) {
 {{< var work.work1.start >}} — {{< var work.work1.end >}}
 
 - {{< var work.work1.bullet1 >}}
-  - {{< var work.work1.b1sub1 >}}
-  - {{< var work.work1.b1sub2 >}}
-  - {{< var work.work1.b1sub3 >}}
-
 - {{< var work.work1.bullet2 >}}
-  - {{< var work.work1.b2sub1 >}}
-  - {{< var work.work1.b2sub2 >}}
-  - {{< var work.work1.b2sub3 >}}
-
 - {{< var work.work1.bullet3 >}}
-  - {{< var work.work1.b3sub1 >}}
-  - {{< var work.work1.b3sub2 >}}
-  - {{< var work.work1.b3sub3 >}}
+- {{< var work.work1.bullet4 >}}
+- {{< var work.work1.bullet5 >}}
+- {{< var work.work1.bullet6 >}}
+- {{< var work.work1.bullet7 >}}
+- {{< var work.work1.bullet8 >}}
+- {{< var work.work1.bullet9 >}}
 
 ------------------------------------------------------------------------
 
@@ -178,9 +155,7 @@ if (refresh | !necessary_files_exist) {
 
 ::: columns
 
-::: {.column width="40%"}
-
-::: {#education-block}
+::: {#education-block .column width="40%"}
 
 ## Education
 
@@ -189,9 +164,6 @@ if (refresh | !necessary_files_exist) {
 {{< var education.degree >}} | {{< var education.major >}}
 
 ({{< var education.end >}})
-
-<!-- end education block -->
-:::
 
 <!-- end education column -->
 :::
@@ -217,12 +189,6 @@ if (refresh | !necessary_files_exist) {
 :::
 
 <!-- end body right column -->
-:::
-
-<!-- end half cols on right column div -->
-:::
-
-<!-- end body right column div -->
 :::
 
 <!-- end body columns -->
