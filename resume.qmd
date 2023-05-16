@@ -21,23 +21,31 @@ functions_to_source <- list.files("R", full.names = TRUE)
 for (f in functions_to_source) source(f)
 
 # refresh data if desired
-refresh <- FALSE
+refresh <- TRUE
 
 if (refresh) {
   # get data from google workbook
-  wb_id <- "1DrQduf2C0muSsZFNJI5y9Ljtr3qKYNacC9YRkI8NiQs"
+  wb_id <- "1OBlLl3V6_4uEExYpziDcoGzPrXCb_EUvEjL37dfItsM"
   DATA <- get_data(wb_id)
   cache_data(DATA)
   
   # save data as variables in yaml file
   write_to_vars(DATA)
   
-  # save heatmap as png
-  heatmap_data <- clean_skills(DATA$skills)
-  heatmap <- create_skills_heatmap(heatmap_data)
-  # first layer is geom_tile for heatmap
-  plot_data <- ggplot2::ggplot_build(heatmap)$data[[1]]
-  save_skills_heatmap(heatmap, "images/heatmap.svg")
+  # save hard skills heatmap as png
+  hard_skills_heatmap_data <- clean_hard_skills(DATA$hard_skills)
+  hard_skills_heatmap <- create_hard_skills_heatmap(hard_skills_heatmap_data)
+  # first layer is geom_tile for hard skills heatmap
+  plot_data <- ggplot2::ggplot_build(hard_skills_heatmap)$data[[1]]
+  save_hard_skills_heatmap(hard_skills_heatmap, "images/hard_skills_heatmap.svg")
+  
+  # save soft skills heatmap as png
+  soft_skills_heatmap_data <- clean_soft_skills(DATA$soft_skills)
+  soft_skills_heatmap <- create_soft_skills_heatmap(soft_skills_heatmap_data)
+  # first layer is geom_tile for soft skills heatmap
+  plot_data <- ggplot2::ggplot_build(soft_skills_heatmap)$data[[1]]
+  save_soft_skills_heatmap(soft_skills_heatmap, "images/soft_skills_heatmap.svg")
+  
 }
 ```
 
@@ -54,8 +62,7 @@ if (refresh) {
 
 ::: {#contact}
 
-{{< fa envelope >}} [{{< var contact.email >}}](mailto: {{< var contact.email >}}) &ensp;**|**&ensp; {{< fa brands linkedin >}} [linkedin.com/in/chuck-horgan]({{< var contact.linkedin >}}) &ensp;**|**&ensp; {{< fa brands github >}} [chorgan182]({{< var contact.github >}}){target=_blank"} &ensp;**|**&ensp; {{< fa globe >}} [chuckhorgan.com]({{< var contact.website >}}){target=_blank"} &ensp;**|**&ensp; {{< fa phone >}} {{< var contact.phone >}}
-
+{{< fa envelope >}} [{{< var contact.email >}}](mailto: {{< var contact.email >}}) &ensp;**|**&ensp; {{< fa brands linkedin >}} [linkedin.com/in/travis-quinn2]({{< var contact.linkedin >}}) &ensp;**|**&ensp; {{< fa phone >}} {{< var contact.phone >}}
 <!-- end contact div -->
 :::
 
@@ -101,8 +108,6 @@ if (refresh) {
 - {{< var work.work1.bullet5 >}}
 - {{< var work.work1.bullet6 >}}
 - {{< var work.work1.bullet7 >}}
-- {{< var work.work1.bullet8 >}}
-- {{< var work.work1.bullet9 >}}
 
 ------------------------------------------------------------------------
 
@@ -110,7 +115,12 @@ if (refresh) {
 
 {{< var work.work2.start >}} — {{< var work.work2.end >}}
 
-{{< var work.work2.bullet1 >}}
+- {{< var work.work2.bullet1 >}}
+- {{< var work.work2.bullet2 >}}
+- {{< var work.work2.bullet3 >}}
+- {{< var work.work2.bullet4 >}}
+- {{< var work.work2.bullet5 >}}
+- {{< var work.work2.bullet6 >}}
 
 ------------------------------------------------------------------------
 
@@ -118,7 +128,22 @@ if (refresh) {
 
 {{< var work.work3.start >}} — {{< var work.work3.end >}}
 
-{{< var work.work3.bullet1 >}}
+- {{< var work.work3.bullet1 >}}
+- {{< var work.work3.bullet2 >}}
+- {{< var work.work3.bullet3 >}}
+- {{< var work.work3.bullet4 >}}
+- {{< var work.work3.bullet5 >}}
+- {{< var work.work3.bullet6 >}}
+
+------------------------------------------------------------------------
+
+**{{< var work.work4.title >}}**, {{< var work.work4.company >}}
+
+{{< var work.work4.start >}} - {{< var work.work4.end >}}
+
+- {{< var work.work4.bullet1 >}}
+- {{< var work.work4.bullet2 >}}
+- {{< var work.work4.bullet3 >}}
 
 <!-- end body left column -->
 :::
@@ -129,14 +154,24 @@ if (refresh) {
 
 ::: {#col-skills .column width="45%"}
 
-## Skills
+## Hard Skills
 
 ```{=html}
 <img
  id="image-heatmap"
- src="images/heatmap.svg"
- alt="A heatmap with skills on the x-axis and software or tool on the y-axis"
+ src="images/hard_skills_heatmap.svg"
+ alt="A heatmap with hard skills on the x-axis and software or tool on the y-axis"
 />
+```
+
+## Soft Skills
+
+```{=html}
+<img
+  id = "image-heatmap"
+  src="images/soft_skills_heatmap.svg"
+  alt="A heatmap with soft skills on the x-axis and method or approach on the y-axis"
+/>  
 ```
 
 ## Additional Experience
@@ -144,14 +179,6 @@ if (refresh) {
 - _{{< var work_other.title1 >}}_, {{< var work_other.company1 >}}
 
 - _{{< var work_other.title2 >}}_, {{< var work_other.company2 >}}
-
-- _{{< var work_other.title3 >}}_, {{< var work_other.company3 >}}
-
-- _{{< var work_other.title4 >}}_, {{< var work_other.company4 >}}
-
-- _{{< var work_other.title5 >}}_, {{< var work_other.company5 >}}
-
-- _{{< var work_other.title6 >}}_, {{< var work_other.company6 >}}
 
 ::: columns
 
@@ -172,15 +199,14 @@ if (refresh) {
 
 ## Interests
 
-:motorcycle: {{< var interests.int1 >}}
+:person_fencing: {{< var interests.int1 >}}
 
 :desktop_computer: {{< var interests.int2 >}}
 
-:climbing_man: {{< var interests.int3 >}}
+:drum: {{< var interests.int3 >}}
 
-:mountain_snow: {{< var interests.int4 >}}
+:hammer: {{< var interests.int4 >}}
 
-:bike: {{< var interests.int5 >}}
 
 <!-- end interests column -->
 :::
