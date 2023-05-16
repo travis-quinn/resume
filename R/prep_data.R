@@ -41,7 +41,7 @@ clean_work <- function(df) {
   work_cols <- names(df) %>%
     purrr::keep(~ stringr::str_detect(.x, "^work"))
 
-  temp <- purrr::set_names(work_cols) %>%
+  purrr::set_names(work_cols) %>%
     purrr::map(~ {
       df_work <- df %>%
         dplyr::select(id, all_of(.x)) %>%
@@ -79,16 +79,16 @@ clean_education <- function(df) {
 
 
 # to be passed on to heatmap function
-clean_skills <- function(df) {
+clean_hard_skills <- function(df) {
 
   # skip first row
   reshaped <- df[-1, ] %>%
     # convert to integer class
-    dplyr::mutate(dplyr::across(-skill,
+    dplyr::mutate(dplyr::across(-hard_skill,
                                 ~ as.character(.x) %>%
                                   dplyr::na_if("NA") %>%
                                   as.integer())) %>%
-    dplyr::rename(Software = skill) %>%
+    dplyr::rename(Software = hard_skill) %>%
     # reshape
     tidyr::pivot_longer(cols = -Software,
                         names_to = "Skill",
@@ -96,7 +96,7 @@ clean_skills <- function(df) {
                         values_transform = list(Level = as.integer))
 
   # create ordering for heatmap
-  software_levels <- df[-1, ]$skill
+  software_levels <- df[-1, ]$hard_skill
   skill_levels <- names(df)[-1]
   exp_level_levels <- c(5, 4, 3, 2, 1, 0, NA)
 
@@ -104,6 +104,51 @@ clean_skills <- function(df) {
   reshaped %>%
     dplyr::mutate(Software = factor(Software,
                                     levels = rev(software_levels),
+                                    ordered = TRUE),
+                  Skill = factor(Skill,
+                                 levels = skill_levels,
+                                 ordered = TRUE),
+                  Level = factor(Level,
+                                 levels = exp_level_levels,
+                                 ordered = TRUE))
+
+}
+
+
+
+clean_interests <- function(df) {
+
+  rlang::set_names(df$text,
+                   nm = df$id) %>%
+    as.list()
+
+}
+
+clean_soft_skills <- function(df) {
+
+  # skip first row
+  reshaped <- df[-1, ] %>%
+    # convert to integer class
+    dplyr::mutate(dplyr::across(-soft_skill,
+                                ~ as.character(.x) %>%
+                                  dplyr::na_if("NA") %>%
+                                  as.integer())) %>%
+    dplyr::rename(Attribute = soft_skill) %>%
+    # reshape
+    tidyr::pivot_longer(cols = -Attribute,
+                        names_to = "Skill",
+                        values_to = "Level",
+                        values_transform = list(Level = as.integer))
+
+  # create ordering for heatmap
+  attribute_levels <- df[-1, ]$soft_skill
+  skill_levels <- names(df)[-1]
+  exp_level_levels <- c(5, 4, 3, 2, 1, 0, NA)
+
+  # coerce all to factors
+  reshaped %>%
+    dplyr::mutate(Attribute = factor(Attribute,
+                                    levels = rev(attribute_levels),
                                     ordered = TRUE),
                   Skill = factor(Skill,
                                  levels = skill_levels,
