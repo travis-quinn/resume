@@ -1,80 +1,123 @@
 contact:
-  name: Chuck Horgan
-  email: chorgan182@gmail.com
-  phone: (724) 987-3190
-  linkedin: https://www.linkedin.com/in/chuck-horgan
-  github: https://github.com/chorgan182
-  website: https://www.chuckhorgan.com/
+  name: Travis Quinn
+  email: quinn.travis529@gmail.com
+  phone: (631) 512-3813
+  linkedin: https://www.linkedin.com/in/travis-quinn2/
+summary:
+  summary: I am a solution engineer with a passion for data, leadership, and empowering
+    those around me to be the best version of themselves. Regardless of the level
+    of complexity, I believe undertanding the why and how of a solution is paramount.
+    This enables me to deepdive into the problem with the objective of learning something
+    to teach as opposed to learning something to work. Passing on the knowledge I
+    learn is as important as acquiring it. I am more interested in how people returned
+    from the hunt with blue berries then pointing out the reasons why others didn’t.
 work:
   work1:
     company: Technomics, Inc.
     title: Lead Analyst
-    start: Aug 2019
+    start: Apr 2021
     end: Present
-    bullet1: I am the most relentless solution engineer you have ever met. The following
-      are all implementations of self-taught knowledge to solve a problem in the most
-      sophisticated, yet reasonable method possible.
-    b1sub1: Transformed a broken collection of scripts into a scalable tool that parses
-      and analyzes 100s of GBs of fixed-width text data in minutes.
-    b1sub2: Operating within hardware and stakeholder skill limits, automated the
-      monthly refresh of the entire 2 TB USA Spending database.This PostgreSQL DB
-      has been used in production validation checks for 2+ years without error.
-    b1sub3: KDB overhaul
-    bullet2: Knowledge acquisition
-    b2sub1: server mgmt, automation
-    b2sub2: DBX, pkg dev
-    b2sub3: Do not believe in learning something to “work”; rather, learning something
-      to “teach” and add to toolbox
-    bullet3: Leadership
-    b3sub1: C2DB
-    b3sub2: CFPB
-    b3sub3: DATS Snippets, internal consultant
+    bullet1: Led and executed on multiple data lifecycle projects (data solutions
+      requirements generation, data collection, data management/architecture, data
+      analysis, data visualization) simultaneously with high pressure time-constrained
+      deadlines.
+    bullet2: Trained, mentored, and grew a majority non-technical college graduate
+      team's hard and soft skills enabling them to communicate effective both internally
+      and externally, take on more complex technical tasking, and independently execute
+      on tasks that previously required oversight and guidance.
+    bullet3: Significantly contributed to the development of practice area data management
+      capability development including overall distinct point of view, approach to
+      data solution requirements generation, approach to data collection, approach
+      to data architecture, approach to extract transform and load (ETL) processes,
+      approach to change data capture (CDC) processes, internal and external opportunities
+      for the practice area, competitor offerings due diligence, overall market due
+      diligence. Capped off with presentation to senior leadership team.
+    bullet4: Led and supported at all steps of the business development pipeline (prospect,
+      explore, build, present, implement, and cultivation) by identifying potential
+      business opportunities with existing or new clients, asking open ended questions
+      to uncover perspective client needs, building content tailored to client needs
+      that stems from our capability offerings, present both in person and virtually
+      to clients, attaining funding from the client, implementing the solution, and
+      continuing the iterative process of uncovering additional needs.
+    bullet5: Converted a legacy data collection project into an automated ETL process
+      including PDF scraping (via custom R package), a relational database, team notebooks
+      for data validation, data loads, queries, and automated client deliverables.
+      This provided significant time and cost savings for both client and company
+      enabling further innovation on the data analysis and visualization fronts producing
+      higher ROI.
+    bullet6: Led effort to support clients seeking to migrate existing data workflows
+      to Databricks by developing the strategic vision and task plan for the project
+      team, aligning team skills sets with project requirements, and communicating
+      project updates and roadblocks to client to adjust schedule and resource allocations.
+    bullet7: Led strategic vision, tasking, and transformation of existing deliverables
+      environment from high-code (R/SQL) into low-code or no-code (Dataiku) where
+      possible to enable non-technical users to perform technical analysis.
   work2:
-    company: Federal Reserve Board
-    title: Research Assistant
-    start: Jun 2018
-    end: Jul 2019
-    bullet1: Contributed to research and policy initiatives in the Financial Stability
-      Assessment section of the Division of Financial Stability.
-    bullet2: Routinely used statistical programming software to process, clean, visualize,
-      and analyze large datasets.
-    bullet3: Developed and taught a training on text-scraping HTML code with Python.
+    company: Stony Brook Medicine
+    title: Assistant Buyer/Expeditor
+    start: Jun 2020
+    end: Apr 2021
+    bullet1: Procured service contracts, OGS contracts, and Stony Brook University
+      campus contracts in accordance with New York State finance and procurement law.
+    bullet2: Completed change notices for existing purchase orders to add additional
+      funds or remove funds that were not needed.
+    bullet3: Drafted specifications with department guidance to request quote from
+      vendors and their competitors.
+    bullet4: Ensured price reasonableness by sourcing competitors and completing cost
+      analyses between competitors’ services.
+    bullet5: Reviewed, negotiated, and redlined contract terms between the hospital
+      and vendors.
+    bullet6: Negotiated between the hospital and universities/high schools for student
+      affiliation agreements.
   work3:
-    company: Penn State Economics Department
-    title: Research Assistant
-    start: May 2017
+    company: UPS
+    title: Account Executive
+    start: May 2018
+    end: Jan 2020
+    bullet1: Managed account base with 350 customers by making in person visits to
+      propose new company solutions, resolve outstanding issues, and renegotiate existing
+      contracts.
+    bullet2: Prospected for new business; cold called, walked in, and followed up
+      on leads to identify new opportunity.
+    bullet3: Consulted industry vertical marketing managers, UPS customer solutions,
+      UPS capital, and sales operations partners to collaborate on opportunities to
+      generate more creative solutions that better fit the customer’s needs.
+    bullet4: Created and presented proposals to C-level decision makers addressing
+      financial top line and bottom line impact as well as quantifying the value associated
+      with implementing UPS solutions.
+    bullet5: Implemented software solutions either on-site or off-site by enrolling
+      and approving customer accounts.
+    bullet6: Cultivated business with quarterly business reviews to present the financial
+      impact UPS solutions have had on the business, generate new opportunities, and
+      grow customer’s businesses organically.
+  work4:
+    company: UPS
+    title: Inside Sales Representative
+    start: Oct 2017
     end: May 2018
-    bullet1: Communicated with state agencies to collect data pivotal to studies in
-      collusion by specific entities.
-    bullet2: Obtained all location information and developed an R script to geocode
-      and calculate driving distances utilizing Google API.
-    bullet3: Held primary responsibility for all informational aspects of the keynote
-      address delivered at the 2017 Antitrust Enforcement Symposium.
+    bullet1: Retained and penetrated account base with over 1,000 small to medium
+      size businesses.
+    bullet2: Identified prospects within the region, prepped pre-call strategy by
+      researching available company information, cold called, asked questions about
+      the future outlook, roadblocks to achieving that strategy, and proposed solutions.
+    bullet3: Created pricing and negotiated based on volume and revenue to ensure
+      a positive operating ratio on the account.
 work_other:
-  title1: Desk Staff/Open Climb Instructor
-  title2: Crew Leader
-  title3: Delivery Driver
-  title4: Peer Tutor
-  title5: Server Assistant
-  title6: Package Handler
-  company1: Earth Treks Climbing and Fitness
-  company2: Meehan Lawn Care
-  company3: Wings Over State College
-  company4: Penn State Beaver
-  company5: Texas Road House
-  company6: FedEx Ground
+  title1: Private Equity Summer Analyst
+  title2: Valet Manager
+  company1: Hale Capital Partners
+  company2: Elegant Valet
 education:
   institution: The Pennsylvania State University
   degree: B.S.
   major: Economics
-  minor: Labor and Employment Relations
-  gpa: '3.69'
-  gpa_major: '3.93'
+  minor: Business
+  gpa: '3.24'
+  gpa_major: '3.30'
   start: '2013-08-15'
-  end: '2018'
+  end: '2017'
 interests:
-  int1: Riding my KTM Superduke
+  int1: Fencing
   int2: PC building/tuning/gaming
-  int3: Rock climbing
-  int4: Backpacking
-  int5: Single-speed bicycles
+  int3: Jazz Music
+  int4: DIY Projects
